@@ -13,24 +13,40 @@ const prom = (v, sec) => (
   })
 )
 
-// Promise loop
-const promiseLoop = async () => {
-  let arrSec = [1000, 2000, 3000]
-  console.time('promise-async-loop')
-  let arrLoop = arrSec.map(async (v, i) => {
-    await prom('prom-loop', v)
-    console.log(`loop-${v, i}`)
-    return `loop-${i}`
-  })
-  await Promise.all(arrLoop)
-  // await Promise.all(arrSec.map(async (v, i) => { 
-  //   await prom('prom-loop', v)
-  //   console.log(`loop-${v,i}`)
-  //   return `loop-${i}`
-  // }))
-  console.log('ini')
-  console.timeEnd('promise-async-loop')
+const countData = async () => {
+  await prom('res prmoise 3 detik', sec3).then(res => {
+    console.log(res)
+  }) 
+  // await Promise.all([prom('res prmoise 5 detik', sec5).then(res => {
+  //   console.log(res)
+  // }),
+  // prom('res prmoise 3 detik', sec3).then(res => {
+  //   console.log(res)
+  // })])
+
+  console.log('res function')
 }
+
+countData()
+
+// Promise loop
+// const promiseLoop = async () => {
+//   let arrSec = [1000, 2000, 3000]
+//   console.time('promise-async-loop')
+//   let arrLoop = arrSec.map(async (v, i) => {
+//     await prom('prom-loop', v)
+//     console.log(`loop-${v, i}`)
+//     return `loop-${i}`
+//   })
+//   await Promise.all(arrLoop)
+//   // await Promise.all(arrSec.map(async (v, i) => { 
+//   //   await prom('prom-loop', v)
+//   //   console.log(`loop-${v,i}`)
+//   //   return `loop-${i}`
+//   // }))
+//   console.log('ini')
+//   console.timeEnd('promise-async-loop')
+// }
 
 // Promise
 // const combine1 = async () => {
@@ -47,7 +63,7 @@ const promiseLoop = async () => {
 // }
 
 // Execute
-promiseLoop()
+// promiseLoop()
 // combine1()
 // combine2()
 

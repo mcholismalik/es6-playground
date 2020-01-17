@@ -5,9 +5,9 @@
 
 // Data
 let products = [
-  { code: 'a', qty: 1 }, 
-  { code: 'b', qty: 2 }, 
-  { code: 'c', qty: 3 }
+  { code: 'a', amount: 200, fee: 50 }, 
+  { code: 'b', amount: 200, fee: 50 }, 
+  { code: 'c', amount: 200, fee: 50 }
 ]
 
 // For
@@ -17,7 +17,10 @@ for (const p of products) {
 }
 
 // Reduce
-let countRdc = products.reduce((p, c) => p + c.qty, 0)
-
+let countRdc = products.reduce((p, c) => p + (c.amount - c.fee), 0)
+// console.log(countRdc)
 // Return 
 // countFor: 6, countReduce: 6
+
+let result = (5 + 2 + 2 + 1)  * 10 / 100
+console.log(result) 

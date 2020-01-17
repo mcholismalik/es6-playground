@@ -1,14 +1,24 @@
-let data = [{
-  name: "Malik",
-  username: "malik_cm"
-}, {
-  name: "Tatang",
-  username: "tangs"
-}]
+// let data = [{
+//   name: "Malik",
+//   username: "malik_cm"
+// }, {
+//   name: "Tatang",
+//   username: "tangs"
+// }]
 
-let test = [...data]
+const renameProp = (oldProp, newProp, { [oldProp]: old, ...others }) => ({
+  [newProp]: old,
+  ...others
+})
 
-console.log({ data, test })
+let json = {
+  "name": 'cols',
+  "long_name": 'cols banget',
+}
+json['short name'] = 'cls'
+
+let json2 = renameProp('long_name', 'long name', json)
+console.log(json2)
 
 
 
